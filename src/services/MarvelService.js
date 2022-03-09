@@ -65,7 +65,7 @@ const useMarvelService = () => {
             thumbnail: comics.thumbnail.path + '.' + comics.thumbnail.extension,
             description: comics.description ? `${comics.description.slice(0, 200)}...` : 'There is no description for this comic',
             pageCount: comics.pageCount,
-            language: comics.textObjects[0].language
+            // language: comics.textObjects.language
 
         }
     }

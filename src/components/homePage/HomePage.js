@@ -2,7 +2,7 @@ import './homePage.scss';
 
 const HomePage = () => {
     return (
-        <div class="parent">
+        <div className="parent">
             <div className="child" >
                 <img src="https://img2.akspic.ru/previews/9/2/0/7/6/167029/167029-prizrachnyj_vsadnik-komiksy_marvel-betmen_2016_111-johnathon_blaze-zheleznyj_chelovek-360x640.jpg" alt="prizrachnyj_vsadnik" />
             </div>
