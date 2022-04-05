@@ -59,8 +59,11 @@ const CharList = (props) => {
         itemRefs.current[i].classList.add('char__item_selected');
     }
 
+
     const elements = list ? list.map((item, i) => {
         const {name, description, thumbnail, id} = item;
+        const imgNotFound = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
+        const imgStyle = imgNotFound === thumbnail ? {objectPosition: '0'} : {objectFit: 'cover'};
         return (
             <li 
                 className='char__item'
@@ -71,7 +74,7 @@ const CharList = (props) => {
                 }}
                 ref={el => itemRefs.current[i] = el}
             >
-                <img src={thumbnail} alt={name}/>
+                <img src={thumbnail} alt={name} style={imgStyle}/>
                 <div className="char__name">{name}</div>
             </li>
         )    

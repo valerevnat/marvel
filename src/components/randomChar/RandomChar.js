@@ -26,6 +26,10 @@ const RandomChar = () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
         getCharacter(id).then(onCharLoaded);
     } 
+
+    const foo = () => {
+        console.log('click');
+    }
     
     const errorMessage = error ? <ErrorMassage/> : null;
     const spinner = loading ? <Spinner/> : null;
@@ -78,5 +82,3 @@ const View = ({char}) => {
 }
 
 export default RandomChar;
-
-// http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg - char.thumbnail

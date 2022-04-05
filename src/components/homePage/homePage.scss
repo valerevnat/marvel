@@ -16,7 +16,7 @@
   .parent{
     padding: .8rem;
     background: black;
-    height: 100vh;
+    height: 85vh;
     // min-height: 500px;
     // width: 100%;
     max-width: 85vw;
@@ -87,7 +87,7 @@
     }
     &:nth-child(5){
       grid-area: five;
-      clip-path: polygon(6.4% 6.48%, 47.24% 5.89%, 100% 0%, 98.41% 96.85%, 53.37% 100%, 53% 63.21%, 3.23% 73.02%, 14.30% 44.04%);
+      clip-path: polygon(6.4% 6.48%, 47.24% 5.89%, 100% 0%, 98.41% 96.85%, 65.37% 100%, 53% 63.21%, 3.23% 73.02%, 14.30% 44.04%);
     }
     &:nth-child(6){
       grid-area: six;
@@ -97,15 +97,23 @@
       grid-area: seven;
       clip-path: polygon(7.92% 33.47%, 96.31% 23.39%, 95.38% 100%, 5.30% 100.85%);
     }
-
-    &:nth-child(9){
+    &:nth-child(8){
       grid-area: nine;
-      clip-path:polygon(2.5% 22.35%, 100% 0%, 100% 100%, 1.55% 100%);
-  
+      clip-path: polygon(2.5% 22.35%, 100% 0%, 100% 100%, 1.55% 100%);
       img{
-        object-position: 30% 50%;
-        height: 135%;
+        object-position: 30% 50%;  
       }
     }
+
+    // &:nth-child(9){
+    //   grid-area: nine;
+    //   clip-path:polygon(2.5% 22.35%, 100% 0%, 100% 100%, 1.55% 100%);
+  
+    //   img{
+    //     // object-position: 30% 50%;
+        
+    //     height: 135%;
+    //   }
+    // }
 
   }

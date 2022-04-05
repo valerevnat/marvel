@@ -5,6 +5,7 @@
     grid-template-columns: repeat(2, 50%);
     align-items: center;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
     &__block {
         padding: 40px 35px;
         display: grid;
@@ -58,6 +59,8 @@
     &__decoration {
         position: absolute;
         bottom: 14px;
-        right: -37px;
+        right: -47px;
+        width: 51%;
     }
+    
 }
