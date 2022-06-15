@@ -16,6 +16,7 @@ const ComicsList = () => {
 
     const onRequestComics = async(offset) => {
         const res = await getAllComics(offset);
+        console.log(res);
 
         let ended = false;
         if(res.length < 8) {

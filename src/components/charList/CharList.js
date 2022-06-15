@@ -10,25 +10,14 @@ const CharList = (props) => {
     const [newItemLoding, setLoading] = useState(false);
     const [offset, setOffset] = useState(210);
     const [charEnded, setEnded] = useState(false);
-    // state = {
-    //     list: [],
-    //     newItemLoding: false, // для деактивации кнопки загрузки доп персонажей
-    //     offset: 210,
-    //     charEnded: false,
-    // }
 
     const {getAllCharacters} = useMarvelService();
-    // marvelService = new MarvelService();
 
     useEffect(() => {
         onRequest();
-    }, []) // пустой [] моделирует componentDidMount
-    // componentDidMount() {        
-    //     this.onRequest(); 
-    // }
-
+    }, []) 
+    
     const onRequest = async (offset) => {
-        // setLoading(false);
         const res = await getAllCharacters(offset);
         
         let ended = false;
@@ -38,21 +27,10 @@ const CharList = (props) => {
         setList(list => [...list, ...res]);
         setOffset(offset => offset + 9);
         setEnded(ended);
-        // await this.setState(({list, offset}) => ({
-        //     list: [...list, ...res],
-        //     newItemLoding: false, 
-        //     offset: offset + 9,
-        //     charEnded: ended
-        // }));
             
     }
 
     const itemRefs = useRef([]);
-
-    // const setRef = (ref) => {
-    //     this.itemRefs.push(ref)
-    // }
-
 
     const focusItem = (i) => {
         itemRefs.current.forEach(item => item.classList.remove('char__item_selected'));
@@ -95,44 +73,7 @@ const CharList = (props) => {
         </div>
     );
 }
-    // render() {
-    //     const {list, newItemLoding, offset, charEnded} = this.state;
 
-    //     //char__item_selected - класс активности
-    //     const elements = list ? list.map((item, i) => {
-    //         const {name, description, thumbnail, id} = item;
-    //         return (
-    //             <li 
-    //                 className='char__item'
-    //                 key={id} 
-    //                 onClick={() => {
-    //                     this.props.onCharSelected(id);
-    //                     this.focusItem(i);
-    //                 }}
-    //                 ref={this.setRef}
-    //             >
-    //                 <img src={thumbnail} alt={name}/>
-    //                 <div className="char__name">{name}</div>
-    //             </li>
-    //         )    
-    //     }) : null;
-
-    //     return (
-    //         <div className="char__list">
-    //             <ul className="char__grid">
-    //                 {elements}
-    //             </ul>
-    //             <button 
-    //                 className="button button__main button__long"
-    //                 disabled={newItemLoding}
-    //                 style={{'display': charEnded ? 'none' : 'block'}}
-    //                 onClick={() => this.onRequest(offset)}>
-    //                 <div className="inner">load more</div>
-    //             </button>
-    //         </div>
-    //     );
-    // }
 
 
 export default CharList;
-

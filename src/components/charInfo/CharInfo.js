@@ -32,7 +32,7 @@ const CharInfo = (props) => {
 
     const onCharLoaded = (char) => {
         setChar(char);
-        console.log(char);
+        console.log('Список имен', char);
     }
 
 

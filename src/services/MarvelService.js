@@ -8,16 +8,6 @@ const useMarvelService = () => {
     const _apiKey = 'apikey=c5c55a839f5e4271e771256c3da7415f';
     const _baseOffsetChar = 210; // Базовый отступ при запросе getAllCharacters
 
-    
-    //Вместо getResource используем request
-
-    // getResource = async(url) => {
-    //     let res = await fetch(url);
-    //     if(!res.ok) {
-    //         throw new Error(`code error: ${res.status}`)
-    //     }
-    //     return await res.json();
-    // }
 
     const getAllCharacters = async (offset = _baseOffsetChar) => {
         const res = await request(`${_apiBase}characters?limit=9&offset=${offset}&${_apiKey}`);
@@ -28,6 +18,12 @@ const useMarvelService = () => {
     const getCharacter = async (id) => {
         const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
         return _transformCharacter(res.data.results[0]);
+    }
+
+    // запрос для формы поиска
+    const getCharacterByName = async (name) => {
+        const res = await request(`${_apiBase}characters?name=${name}&${_apiKey}`);
+        return res.data.results.map(_transformCharacter)
     }
 
     const getAllComics = async (offset = _baseOffsetChar) => {
@@ -70,7 +66,7 @@ const useMarvelService = () => {
         }
     }
 
-    return {loading, error, clearError, getAllCharacters, getCharacter, getAllComics, getComic};
+    return {loading, error, clearError, getAllCharacters, getCharacter, getAllComics, getComic, getCharacterByName};
 }
 
 export default useMarvelService;

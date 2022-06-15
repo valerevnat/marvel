@@ -34,6 +34,7 @@ a {
     text-decoration: none;
     color: inherit;
     display: inline-block;
+
     &:hover {
         text-decoration: none;
         color: inherit;
@@ -48,26 +49,34 @@ p {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    margin: 0; 
+    margin: 0;
 }
 
 .app {
     width: 1100px;
     margin: 0 auto;
-    padding: 50px 0 50px 0;
+    padding: 25px 0 50px 0;
     position: relative;
+
     .bg-decoration {
         position: absolute;
         right: -174px;
-        bottom: -70px;
+        bottom: 0;
         z-index: -1;
     }
 }
 
 main {
-    margin-top: 50px;
+    margin-top: 25px;
     position: relative;
 }
+
+// .char__container_search {
+//     position: fixed;
+//     right: 10%;
+//     min-width: 30%;
+//     max-width: 30%;
+// }
 
 .pulse {
     animation: pulse 1.5s ease-in-out .5s infinite
@@ -77,9 +86,11 @@ main {
     0% {
         opacity: 1
     }
+
     50% {
         opacity: .4
     }
+
     100% {
         opacity: 1
     }

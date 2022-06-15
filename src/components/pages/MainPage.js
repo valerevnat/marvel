@@ -4,8 +4,12 @@ import RandomChar from "../randomChar/RandomChar";
 import CharList from "../charList/CharList";
 import CharInfo from "../charInfo/CharInfo";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
+import FormSearch from '../forms/formSearch/FormSearch';
 
 import decoration from '../../resources/img/vision.png';
+
+import '../../style/style.scss';
+
 
 const MainPage = () => {
 
@@ -13,6 +17,7 @@ const MainPage = () => {
 
     const onCharSelected = (id) => {
         setChar(id);
+        console.log(id);
     }
     
     return (
@@ -24,9 +29,14 @@ const MainPage = () => {
                 <ErrorBoundary>
                     <CharList onCharSelected={onCharSelected}/>
                 </ErrorBoundary>
-                <ErrorBoundary> 
-                    <CharInfo charId={selectedChar}/> 
-                </ErrorBoundary>    
+                <div>
+                    <ErrorBoundary> 
+                        <CharInfo charId={selectedChar}/> 
+                    </ErrorBoundary>  
+                    <ErrorBoundary> 
+                        <FormSearch/>
+                    </ErrorBoundary>
+                </div>
             </div>
             <img className="bg-decoration" src={decoration} alt="vision"/>
         </>
@@ -34,3 +44,5 @@ const MainPage = () => {
 }
 
 export default MainPage;
+
+//className='char__container_search'
