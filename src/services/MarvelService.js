@@ -1,12 +1,11 @@
 import {useHttp} from '../hooks/http.hook';
 
-// Название компонента меняем с MarvelService на useMarvelService
 
 const useMarvelService = () => {
-    const {loading, request, error, clearError} = useHttp(); // импортируем все, что есть в кастомном хуке
-    const _apiBase = 'https://gateway.marvel.com:443/v1/public/'; // данные знач запрещено менять (те, что с нижним плдчеркианием)
+    const {loading, request, error, clearError} = useHttp(); 
+    const _apiBase = 'https://gateway.marvel.com:443/v1/public/'; 
     const _apiKey = 'apikey=c5c55a839f5e4271e771256c3da7415f';
-    const _baseOffsetChar = 210; // Базовый отступ при запросе getAllCharacters
+    const _baseOffsetChar = 210; 
 
 
     const getAllCharacters = async (offset = _baseOffsetChar) => {
@@ -20,26 +19,20 @@ const useMarvelService = () => {
         return _transformCharacter(res.data.results[0]);
     }
 
-    // запрос для формы поиска
     const getCharacterByName = async (name) => {
         const res = await request(`${_apiBase}characters?name=${name}&${_apiKey}`);
         return res.data.results.map(_transformCharacter)
     }
 
-    const getAllComics = async (offset = _baseOffsetChar) => {
-        
+    const getAllComics = async (offset = _baseOffsetChar) => {      
         const res = await request(`${_apiBase}comics?limit=8&offset=${offset}&${_apiKey}`);
-        // console.log(res.data.results.map(_transformComics));
-        return res.data.results.map(_transformComics)
-        
+        return res.data.results.map(_transformComics)    
     }
 
     const getComic = async (id) => {
         const res = await request(`${_apiBase}comics/${id}?${_apiKey}`);
         return _transformComics(res.data.results[0]);
     }
-
-    // console.log(res.data.results.map(_transformComics));
 
     const _transformCharacter = (char) => {
         return {
@@ -61,7 +54,6 @@ const useMarvelService = () => {
             thumbnail: comics.thumbnail.path + '.' + comics.thumbnail.extension,
             description: comics.description ? `${comics.description.slice(0, 200)}...` : 'There is no description for this comic',
             pageCount: comics.pageCount ? comics.pageCount : 'no data',
-            // language: comics.textObjects.language
 
         }
     }

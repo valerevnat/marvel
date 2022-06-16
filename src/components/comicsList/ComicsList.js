@@ -16,7 +16,6 @@ const ComicsList = () => {
 
     const onRequestComics = async(offset) => {
         const res = await getAllComics(offset);
-        console.log(res);
 
         let ended = false;
         if(res.length < 8) {
@@ -29,10 +28,7 @@ const ComicsList = () => {
 
     const elements = comics ? comics.map(item => {
         const {id, title, prices, thumbnail} = item;
-        // console.log(id);
-        // console.log(title);
-        // console.log(prices);
-        // console.log(thumbnail);
+
         return (
             <li key={id} className="comics__item">
                 <Link to={`/comics/${id}`}>

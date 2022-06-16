@@ -17,7 +17,6 @@ const MainPage = () => {
 
     const onCharSelected = (id) => {
         setChar(id);
-        console.log(id);
     }
     
     return (
@@ -45,4 +44,3 @@ const MainPage = () => {
 
 export default MainPage;
 
-//className='char__container_search'

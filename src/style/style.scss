@@ -9,10 +9,6 @@
     box-sizing: border-box;
 }
 
-// body {
-//     background-color: black;
-// }
-
 ul,
 li,
 dl {
@@ -70,13 +66,6 @@ main {
     margin-top: 25px;
     position: relative;
 }
-
-// .char__container_search {
-//     position: fixed;
-//     right: 10%;
-//     min-width: 30%;
-//     max-width: 30%;
-// }
 
 .pulse {
     animation: pulse 1.5s ease-in-out .5s infinite

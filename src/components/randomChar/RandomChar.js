@@ -22,14 +22,10 @@ const RandomChar = () => {
     }
 
     const upDateChar = () => {
-        clearError(); // очистка ошибки
+        clearError(); 
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
         getCharacter(id).then(onCharLoaded);
     } 
-
-    const foo = () => {
-        console.log('click');
-    }
     
     const errorMessage = error ? <ErrorMassage/> : null;
     const spinner = loading ? <Spinner/> : null;

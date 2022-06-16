@@ -6,11 +6,9 @@ import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMassage/ErrorMassage';
 import AppBanner from "../appBanner/AppBanner";
 
-// Компонент отвечает за логику "однотипных страниц" страниц (SingleComic и SingleChar)
-// принимает компоненты, которые просто что-то рендерят 
 
 const SinglePage = ({Component, dataType}) => {
-    const {id} = useParams(); // получение id из url-пути
+    const {id} = useParams(); 
     const [data, setData] = useState(null);
     const {loading, error, getComic, getCharacter, clearError} = useMarvelService();
 

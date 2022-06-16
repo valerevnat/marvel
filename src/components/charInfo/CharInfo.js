@@ -81,7 +81,7 @@ const View = ({char}) => {
                 console.log(e.target.outerText);
             } }>
                 {
-                    comics.map((item, i) => { // i -номер по порядку
+                    comics.map((item, i) => { 
                         if(i > 9) {return;}
                         
                         return (

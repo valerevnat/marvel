@@ -1,6 +1,5 @@
 import { Component } from "react";
 
-// Компонент - предохранитель (ловит ошибку)
 
 class ErrorBoundary extends Component {
     state = {
@@ -9,7 +8,6 @@ class ErrorBoundary extends Component {
 
 
     componentDidCatch(error, info) {
-        console.log(error, info);
         this.setState({
             error: true
         })

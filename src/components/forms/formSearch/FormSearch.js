@@ -10,16 +10,13 @@ import './formSearch.scss';
 
 
 const FormSearch = () => {
-    // В char мы помещаем тот персонаж, который был найден в нашей Api
     const [char, setChar] = useState(null);
     const {loading, error, getCharacterByName, clearError} = useMarvelService();
 
-    // Устанавливает наше сосояние
     const onCharLoaded = (char) => {
         setChar(char);
     }
 
-    //Запускаяется в момент запроса на сервер
     const updateChar = (name) => {
         clearError();
         getCharacterByName(name).then(onCharLoaded);
